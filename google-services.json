@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "469277204374",
+    "project_id": "mdaunotix",
+    "storage_bucket": "mdaunotix.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:469277204374:android:91dd2638fa7ba2a520c7b7",
+        "android_client_info": {
+          "package_name": "mdausoft.co.tz.mdaunotix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "469277204374-v5urtcuth2qmm8drhku7bp8oa1746k2e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mdausoft.co.tz.mdaunotix",
+            "certificate_hash": "279a3ca69c9e7e8f3489a4ae992155ac18035038"
+          }
+        },
+        {
+          "client_id": "469277204374-uevpkbva4j42u0k52lf31e9hbafven3g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbwUL02gueRGYrJ1izoNnce2HPxIa3aHI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "469277204374-uevpkbva4j42u0k52lf31e9hbafven3g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

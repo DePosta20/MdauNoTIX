@@ -1,0 +1,89 @@
+<resources>
+    <string name="app_name">NoTIX</string>
+    <string name="title_activity_login">Login</string>
+    <string name="username">Username</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome! to,"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+    <string name="register">REGISTER</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="signup_login_hint">Already have an account?</string>
+    <string name="login_signup_hint">Don\'t have an account?</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="greetings">Welcome to,</string>
+    <string name="full_name">Full Name</string>
+    <string name="email_author">mdausoft.co.tz</string>
+    <string name="menu_home">Home</string>
+    <string name="action_settings">Settings</string>
+    <string name="new_note">New Notes</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="logout">Log out</string>
+    <string name="email">Email</string>
+    <string name="title_activity_new_note">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_add_note">Add new Notix</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="choose_subject">Type Subject</string>
+    <string name="phone_no">phone no</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="email_validation">Email Validation</string>
+    <string name="your_email_is_not_validated">Confirmation Code sent to your Email</string>
+    <string name="please_check_your_email_for_validation">Please Check your Email for Validation</string>
+    <string name="confirmation_code">Confirmation Code</string>
+    <string name="confirm">Confirm</string>
+    <string name="resend_code">Resend Code</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="btn_take_picture">Take Photo</string>
+    <string name="captured_picture">Captured Picture</string>
+    <string name="captured_image">Captured Image</string>
+    <string name="type_subject">Type Subject</string>
+    <string name="subjects">Subjects</string>
+    <string name="add_new_subject">Add New Subject</string>
+    <string name="you_have_not_register_any_subjects">You have Not Register Any Subjects, Please Add!</string>
+    <string name="subject_name">Subject Name</string>
+    <string name="subject_code">Subject Code</string>
+    <string name="submit">SUBMIT</string>
+    <string name="pull">PULL</string>
+    <string name="choose_from_gallery">Choose from Gallery</string>
+    <string name="this_weeks_notes">This Week\'s Notes</string>
+    <string name="background">Background</string>
+    <string name="notes_image">Notes Image</string>
+    <string name="todays_notes">Today\'s Notes</string>
+    <string name="no_notes_for_today">No Notes for Today,</string>
+    <string name="add_new_note">Add New Note</string>
+    <string name="prescription">Prescription</string>
+
+
+</resources>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.subjects.SubjectFragment">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp">
+        <Button
+            android:id="@+id/pull_subjects"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="@string/pull" />
+        <Button
+            android:id="@+id/add_new_subject_btn"
+            style="@style/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="@string/add_new_subject" />
+
+    </GridLayout>
+
+    <LinearLayout
+        android:id="@+id/subjects_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/check_subjects"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/you_have_not_register_any_subjects"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            style="@style/normalText"/>
+
+        <ListView
+            android:id="@+id/subject_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@color/colorPrimary"
+            android:dividerHeight="0.5dp"
+            android:listSelector="@color/colorAccent"/>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="64dp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:id="@+id/add_subject_form"
+        android:visibility="gone"
+        android:background="@color/colorAccent">
+
+        <EditText
+            android:id="@+id/subject_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="Subject Name"
+            android:inputType="text"
+            android:hint="@string/subject_name"
+            style="@style/textEditor"/>
+
+        <EditText
+            android:id="@+id/subject_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="Subject Code"
+            android:inputType="text"
+            android:hint="@string/subject_code"
+            style="@style/textEditor"/>
+
+        <Button
+            android:id="@+id/save_new_subject_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/button"
+            android:layout_gravity="center"
+            android:text="@string/submit"/>
+
+    </LinearLayout>
+
+</LinearLayout>

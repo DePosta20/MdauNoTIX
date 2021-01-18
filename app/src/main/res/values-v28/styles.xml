@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="button">
+        <item name="android:padding">15dp</item>
+        <item name="android:background">@drawable/text_editor</item>
+        <item name="android:textColor">@color/whiteColor</item>
+        <item name="android:textColorHint">@color/blackColor</item>
+        <item name="android:buttonCornerRadius">10dp</item>
+    </style>
+</resources>
