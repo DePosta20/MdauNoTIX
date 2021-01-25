@@ -11,4 +11,5 @@
     <string name="todays_notes">Today\'s Notes</string>
     <string name="no_notes_for_today">No Notes for Today,</string>
     <string name="add_new_note">Add New Note</string>
+    <string name="select_the_subject">Select the Subject</string>
 </resources>
