@@ -14,8 +14,8 @@
             android:title="@string/subjects" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:icon="@drawable/ic_list"
+            android:title="@string/menu_notes" />
 
     </group>
 </menu>
