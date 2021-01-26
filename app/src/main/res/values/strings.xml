@@ -85,6 +85,8 @@
     <string name="add_new_note">Add New Note</string>
     <string name="prescription">Prescription</string>
     <string name="select_the_subject">Select the Subject</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

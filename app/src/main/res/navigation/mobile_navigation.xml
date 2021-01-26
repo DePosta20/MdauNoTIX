@@ -18,8 +18,21 @@
         tools:layout="@layout/fragment_subjects" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_notes"
         android:name="mdausoft.co.tz.mdaunotix.ui.notes.NotesFragment"
         android:label="@string/menu_notes"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_slideshow" >
+        <action
+            android:id="@+id/action_nav_notes_to_nav_notesNext"
+            app:destination="@id/nav_notesNext" />
+        <action
+            android:id="@+id/action_nav_notes_to_nav_notesNext2"
+            app:destination="@id/nav_notesNext" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_notesNext"
+        android:name="mdausoft.co.tz.mdaunotix.ui.notes.NotesFragment"
+        android:label="@string/menu_notes"
+        tools:layout="@layout/fragment_notes_next" />
 </navigation>

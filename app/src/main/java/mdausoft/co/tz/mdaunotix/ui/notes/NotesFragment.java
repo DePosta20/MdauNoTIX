@@ -1,5 +1,6 @@
 package mdausoft.co.tz.mdaunotix.ui.notes;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,9 +37,11 @@ public class NotesFragment extends Fragment {
         } else {
             ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_list_item_1, my_DB.get_all_subjects());
             subject_list.setAdapter(arrayAdapter);
-            subject_list.setOnItemClickListener((parent, view, position, id) ->
-                    Toast.makeText(requireContext(), "Click ListItem Name " + subject_arr.get(position), Toast.LENGTH_LONG)
-                            .show());
+            subject_list.setOnItemClickListener((parent, view, position, id) -> {
+                Intent i = new Intent(requireContext(), notesNext.class);
+                Toast.makeText(requireContext(), "Click ListItem Name " + subject_arr.get(position), Toast.LENGTH_LONG)
+                        .show();
+            });
         }
         return root;
     }
