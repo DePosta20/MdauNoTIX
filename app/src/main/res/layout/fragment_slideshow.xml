@@ -18,7 +18,7 @@
         android:padding="10dp"/>
 
     <ListView
-        android:id="@+id/subjectx"
+        android:id="@+id/subject_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/subject_namex"
