@@ -25,9 +25,6 @@
         <action
             android:id="@+id/action_nav_notes_to_nav_notesNext"
             app:destination="@id/nav_notesNext" />
-        <action
-            android:id="@+id/action_nav_notes_to_nav_notesNext2"
-            app:destination="@id/nav_notesNext" />
     </fragment>
 
     <fragment
