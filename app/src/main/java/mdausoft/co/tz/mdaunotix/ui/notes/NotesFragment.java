@@ -39,8 +39,8 @@ public class NotesFragment extends Fragment {
             subject_list.setAdapter(arrayAdapter);
             subject_list.setOnItemClickListener((parent, view, position, id) -> {
                 Intent i = new Intent(requireContext(), notesNext.class);
-                Toast.makeText(requireContext(), "Click ListItem Name " + subject_arr.get(position), Toast.LENGTH_LONG)
-                        .show();
+                i.putExtra("subject_id", id);
+                startActivity(i);
             });
         }
         return root;
