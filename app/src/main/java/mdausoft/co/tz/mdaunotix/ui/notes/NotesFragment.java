@@ -1,6 +1,5 @@
 package mdausoft.co.tz.mdaunotix.ui.notes;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,14 +7,11 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import java.util.ArrayList;
 
@@ -38,9 +34,14 @@ public class NotesFragment extends Fragment {
             ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_list_item_1, my_DB.get_all_subjects());
             subject_list.setAdapter(arrayAdapter);
             subject_list.setOnItemClickListener((parent, view, position, id) -> {
-                Intent i = new Intent(requireContext(), notesNext.class);
-                i.putExtra("subject_id", id);
-                startActivity(i);
+                Bundle bundle=new Bundle();
+                bundle.putString("subject_id", String.valueOf(id));
+                Fragment fragment = new notesNext();
+                fragment.setArguments(bundle);
+                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.nav_notes_layout, fragment);
+                fragmentTransaction.commit();
             });
         }
         return root;
