@@ -9,6 +9,7 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -35,6 +36,8 @@ public class NotesFragment extends Fragment {
             subject_list.setAdapter(arrayAdapter);
             subject_list.setOnItemClickListener((parent, view, position, id) -> {
                 Bundle bundle=new Bundle();
+                ConstraintLayout nav_notes_layout = root.findViewById(R.id.nav_notes_layout);
+                nav_notes_layout.setVisibility(View.GONE);
                 bundle.putString("subject_id", String.valueOf(id));
                 Fragment fragment = new notesNext();
                 fragment.setArguments(bundle);

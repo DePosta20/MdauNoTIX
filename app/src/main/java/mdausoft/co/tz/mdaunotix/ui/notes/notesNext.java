@@ -8,9 +8,11 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import mdausoft.co.tz.mdaunotix.DB_helper;
 import mdausoft.co.tz.mdaunotix.R;
 
 public class notesNext extends Fragment {
+    DB_helper my_DB;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
