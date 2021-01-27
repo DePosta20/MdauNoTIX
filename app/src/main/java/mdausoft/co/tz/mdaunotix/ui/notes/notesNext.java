@@ -23,6 +23,7 @@ public class notesNext extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         assert getArguments() != null;
+        my_DB = new DB_helper(requireContext(), 0);
         String subject_id = getArguments().getString("subject_id");
         View root = inflater.inflate(R.layout.fragment_notes_next, container, false);
         ListView subject_notes = root.findViewById(R.id.subject_notes);

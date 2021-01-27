@@ -36,6 +36,7 @@ public class NotesFragment extends Fragment {
             subject_list.setAdapter(arrayAdapter);
             subject_list.setOnItemClickListener((parent, view, position, id) -> {
                 Bundle bundle=new Bundle();
+                id = id + 1;
                 ConstraintLayout nav_notes_layout = root.findViewById(R.id.nav_notes_layout);
                 nav_notes_layout.setVisibility(View.GONE);
                 bundle.putString("subject_id", String.valueOf(id));

@@ -2,6 +2,7 @@ package mdausoft.co.tz.mdaunotix;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.net.wifi.WifiManager;
 import android.os.Environment;
 import android.text.Layout;
@@ -12,7 +13,10 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,13 +29,21 @@ import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import mdausoft.co.tz.mdaunotix.services.ConnectivityReceiver;
+
 import static androidx.core.content.ContextCompat.getSystemService;
 
 public class Function {
     public void make_toast(Context activityContext, String textStr) {
         Toast.makeText(activityContext, textStr, Toast.LENGTH_SHORT).show();
     }
-
+    ////////////////////////////////////////////////////////////////
+    public void checkConnection(Context ctx) {
+        boolean isConnected = ConnectivityReceiver.isConnected();
+        if (!isConnected) {
+            make_toast(ctx, "Sorry! Not connected to internet");
+        }
+    }
     ////////////////////////////////////////////////////////////////
     public String md5(String s) {
         try {

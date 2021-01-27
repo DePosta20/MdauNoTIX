@@ -60,11 +60,13 @@ public class addNote extends AppCompatActivity {
     GoogleSignInClient mGoogleSignInClient;
     ImageView imgPreview;
     AutoCompleteTextView subjects=null;
+    Function func_obj = new Function();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         my_DB = new DB_helper(getApplicationContext(), 0);
         super.onCreate(savedInstanceState);
+        func_obj.checkConnection(getApplicationContext());
         setContentView(R.layout.activity_add_note);
         mGoogleSignInClient = buildGoogleSignInClient();
         Toolbar toolbar = findViewById(R.id.toolbar_newNote);

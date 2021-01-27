@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     DB_helper myDB;
     DriveUtils driveUtils;
+    Function func_obj = new Function();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,6 +120,13 @@ public class MainActivity extends AppCompatActivity {
         TextView user_fullname = header.findViewById(R.id.user_fullname);
         user_fullname.setText(fullName);
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        func_obj.checkConnection(getApplicationContext());
+    }
+
     /////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
