@@ -25,7 +25,7 @@ public class NotesFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         my_DB = new DB_helper(requireContext(), 0);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
+        View root = inflater.inflate(R.layout.fragment_notes, container, false);
         loadingProgressBar = root.findViewById(R.id.loading);
         ListView subject_list = root.findViewById(R.id.subject_list);
         ArrayList<String> subject_arr = my_DB.get_all_subjects();
