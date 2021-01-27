@@ -68,7 +68,6 @@ public class addNote extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        func_obj.checkConnection(getApplicationContext());
         setContentView(R.layout.activity_add_note);
-        mGoogleSignInClient = buildGoogleSignInClient();
         Toolbar toolbar = findViewById(R.id.toolbar_newNote);
         setSupportActionBar(toolbar);
         toolbar.setNavigationOnClickListener(view -> {
@@ -107,13 +106,16 @@ public class addNote extends AppCompatActivity {
         request_signIn();
     }
 
-    /////////////////////////////////////////////////////////////////////////////////////////////
-    private GoogleSignInClient buildGoogleSignInClient() {
-        GoogleSignInOptions signInOptions =
-                new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                        .requestScopes(Drive.SCOPE_FILE)
-                        .build();
-        return GoogleSignIn.getClient(this, signInOptions);
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Button create_file = findViewById(R.id.create_file);
+        create_file.setOnClickListener(v ->
+                driveUtils.createFile().addOnSuccessListener(s -> {
+                    Toast.makeText(getApplicationContext(), "Successful", Toast.LENGTH_LONG).show();
+                }).addOnFailureListener(e -> {
+                    Toast.makeText(getApplicationContext(), "Failed", Toast.LENGTH_LONG).show();
+                }));
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////
@@ -182,10 +184,17 @@ public class addNote extends AppCompatActivity {
     /////////////////////////////////////////////////////////////////////////////////////////////
     public void request_signIn(){
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
+        String tkn = account.getEmail();
+        System.out.println(tkn);
         if (account == null){
             GoogleSignInOptions signInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                     .requestEmail()
+                    .requestScopes(new Scope(DriveScopes.DRIVE))
                     .requestScopes(new Scope(DriveScopes.DRIVE_FILE))
+                    .requestScopes(new Scope(DriveScopes.DRIVE_APPDATA))
+                    .requestScopes(new Scope(DriveScopes.DRIVE_READONLY))
+                    .requestEmail()
+                    .requestId()
                     .build();
             GoogleSignInClient client = GoogleSignIn.getClient(getApplicationContext(), signInOptions);
             startActivityForResult(client.getSignInIntent(), Constants.GOOGLE_DRIVE_REQ_ID);
@@ -200,12 +209,14 @@ public class addNote extends AppCompatActivity {
                     credential.setSelectedAccount(googleSignInAccount.getAccount());
                     com.google.api.services.drive.Drive googleDriveService = new com.google.api.services.drive.Drive.Builder(
                             AndroidHttp.newCompatibleTransport(),
-                            new GsonFactory(),
-                            credential)
+                            new GsonFactory(), credential)
                             .setApplicationName(Constants.APP_NAME)
                             .build();
                     driveUtils = new DriveUtils(googleDriveService);
-                }).addOnFailureListener(e -> { });
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(getApplicationContext(), "Failed to SignIN", Toast.LENGTH_LONG).show();
+                });
     }
     //////////////////////////////////////////////////////////////////////////////////////
     @Override
@@ -248,6 +259,7 @@ public class addNote extends AppCompatActivity {
             handleSignInIntent(data);
         }
     }
+
     //////////////////////////////////////////////////////////////////////////////////////
     public void upload_file (View view){
         AutoCompleteTextView subjects_name = findViewById(R.id.subjects_name);
@@ -286,13 +298,4 @@ public class addNote extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Check google drive API key", Toast.LENGTH_LONG).show();
                 });
     }
-
-    public void createFile(View view) {
-        driveUtils.createFile().addOnSuccessListener(s -> {
-            Toast.makeText(getApplicationContext(), "Successful", Toast.LENGTH_LONG).show();
-        }).addOnFailureListener(e -> {
-            Toast.makeText(getApplicationContext(), "Failed", Toast.LENGTH_LONG).show();
-        });
-    }
-
 }
