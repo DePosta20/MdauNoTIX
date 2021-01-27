@@ -66,7 +66,7 @@ public class addNote extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         my_DB = new DB_helper(getApplicationContext(), 0);
         super.onCreate(savedInstanceState);
-        func_obj.checkConnection(getApplicationContext());
+//        func_obj.checkConnection(getApplicationContext());
         setContentView(R.layout.activity_add_note);
         mGoogleSignInClient = buildGoogleSignInClient();
         Toolbar toolbar = findViewById(R.id.toolbar_newNote);
@@ -225,24 +225,18 @@ public class addNote extends AppCompatActivity {
                         .show();
             }
         } else if (requestCode == Constants.PICK_IMAGE) {
-            try {
-                final Uri imageUri = data.getData();
-                if (imageUri != null){
-                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(), imageUri);
+            final Uri imageUri = data.getData();
+            if (imageUri != null){
+                //Bitmap bitmap = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(), imageUri);
+                //imgPreview.setImageBitmap(bitmap);
+                Bitmap bitmap;
+                try {
+                    bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));
                     imgPreview.setImageBitmap(bitmap);
-                    try {
-                        bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));
-                        imgPreview.setImageBitmap(bitmap);
-                    } catch (FileNotFoundException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    }
+                } catch (FileNotFoundException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
                 }
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-                Toast.makeText(addNote.this, "Something went wrong", Toast.LENGTH_LONG).show();
-            } catch (IOException e) {
-                e.printStackTrace();
             }
             Button save_pic = findViewById(R.id.save_pic);
             Button take_photo = findViewById(R.id.take_photo);
