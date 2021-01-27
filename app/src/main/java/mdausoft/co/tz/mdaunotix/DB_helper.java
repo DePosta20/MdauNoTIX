@@ -102,7 +102,7 @@ public class DB_helper extends SQLiteOpenHelper{
         Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
-                list.add(cursor.getString(1));//adding 2nd column data
+                list.add(cursor.getString(1));
             } while (cursor.moveToNext());
         }
         cursor.close();
