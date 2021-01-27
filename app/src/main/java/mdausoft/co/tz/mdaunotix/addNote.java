@@ -94,7 +94,7 @@ public class addNote extends AppCompatActivity {
         });
         Button btnselect_photo = findViewById(R.id.select_photo);
         btnselect_photo.setOnClickListener(v -> {
-            Intent intent = new Intent();
+            Intent intent = new Intent(Intent.ACTION_PICK);
             intent.setType("image/*");
             intent.setAction(Intent.ACTION_GET_CONTENT);
             startActivityForResult(Intent.createChooser(intent, "Select Picture"), Constants.PICK_IMAGE);
@@ -230,6 +230,13 @@ public class addNote extends AppCompatActivity {
                 if (imageUri != null){
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(), imageUri);
                     imgPreview.setImageBitmap(bitmap);
+                    try {
+                        bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));
+                        imgPreview.setImageBitmap(bitmap);
+                    } catch (FileNotFoundException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
                 }
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
@@ -293,4 +300,5 @@ public class addNote extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Failed", Toast.LENGTH_LONG).show();
         });
     }
+
 }

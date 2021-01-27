@@ -44,6 +44,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import mdausoft.co.tz.mdaunotix.Utils.DriveUtils;
+import mdausoft.co.tz.mdaunotix.services.ConnectivityReceiver;
+import mdausoft.co.tz.mdaunotix.services.MyApplication;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -124,9 +126,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        func_obj.checkConnection(getApplicationContext());
+//        MyApplication.getInstance().setConnectivityListener((ConnectivityReceiver.ConnectivityReceiverListener) this);
+     //   func_obj.checkConnection(getApplicationContext());
     }
-
     /////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
