@@ -132,7 +132,6 @@ public class MainActivity extends AppCompatActivity {
     /////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
@@ -160,6 +159,9 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(MainActivity.this, "Failed to Logout", Toast.LENGTH_LONG).show();
             }
+        }else if (id == R.id.contactUs){
+            Intent i = new Intent(MainActivity.this, contactUs.class);
+            startActivity(i);
         }
         return super.onOptionsItemSelected(item);
     }

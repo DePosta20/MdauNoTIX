@@ -16,6 +16,5 @@
             android:id="@+id/nav_notes"
             android:icon="@drawable/ic_list"
             android:title="@string/menu_notes" />
-
     </group>
 </menu>
