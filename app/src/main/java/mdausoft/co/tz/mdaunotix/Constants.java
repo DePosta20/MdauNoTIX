@@ -8,7 +8,7 @@ public class Constants {
     public static final String TABLE_NAME_notes = "tb_notes";
 
     // Web API
-    private static final String ROOT_URL = "http://192.168.56.1/notix/mobApp/";
+    private static final String ROOT_URL = "http://192.168.4.2/notix/mobApp/";
     //private static final String ROOT_URL = "http://www.mdausoft.co.tz/notix/mobAPI/";
     public static final String URL_REGISTER = ROOT_URL + "register.php";
     public static final String URL_LOGIN = ROOT_URL + "login.php";

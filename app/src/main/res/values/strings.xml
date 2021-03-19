@@ -90,6 +90,7 @@
     <string name="contact_us">Contact Us</string>
     <string name="title_activity_contact_us">contact Us</string>
     <string name="your_message">Your Message</string>
+    <string name="send">Send</string>
 
 
 </resources>
